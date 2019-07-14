@@ -14,6 +14,8 @@ __A hipster developer who believes code `maintainability` and `extensibility` ar
 
 ## Open Source
 
+* Chief Moderator at Flutter Forum(https://flutterforum.co).
+* Maintainer for [Aviacommerce](https://github.com/aviacommerce) an open source e-commerce framework in Elixir.
 * Author and maintainer of [Gringotts](https://github.com/aviabird/gringotts) a payment gateway integrator library based on shopify's [activemerchant](https://github.com/activemerchant/active_merchant).
 * Author and maintainer of [AngularSpree](https://github.com/aviabird/angularspree) an open source frontend e-commerce framework in [Angular 2.x+](https://angular.io).
 
@@ -21,7 +23,7 @@ __A hipster developer who believes code `maintainability` and `extensibility` ar
 
 ## Languages and Frameworks
 
-I have worked with `Ruby on Rails`, `Elixir`, `Phoenix framework`, `AngularJs`, `Angular(2.x+)`, `ReactJs`, `Golang`, `NodeJS`.
+I have worked with `Ruby on Rails`, `Flutter/Dart`, `Elixir`, `Phoenix framework`, `AngularJs`, `Angular`, `ReactJs`, `Golang`, `NodeJS`.
 
 ---
 
