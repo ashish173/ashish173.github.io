@@ -42,8 +42,8 @@
         }
 
         .profile-image {
-            width: 128px;
-            height: 128px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -97,7 +97,7 @@
         }
 
         .timeline-year {
-            width: 80px;
+            width: 120px;
             flex-shrink: 0;
             color: #666;
         }
@@ -162,6 +162,35 @@
             color: #333;
         }
 
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .inline-link:hover {
+            color: #1d4ed8;
+        }
+
+        .inline-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .inline-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -191,22 +220,22 @@
             <img src="./assets/photo.jpg" alt="Profile" class="profile-image">
             <div class="profile-info">
                 <h1>Ashish Singh</h1>
-                <p class="profile-bio">Building Usefull Products; Student for & of life.</p>
+                <p class="profile-bio">Building impactful products; forever a student of life. 📚</p>
                 <div class="social-links">
                     <!-- Twitter -->
-                    <a href="https://x.com/ashishait" target="_" class="social-icon">
+                    <a href="https://x.com/ashishait" target="_blank" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
                         </svg>
                     </a>
                     <!-- GitHub -->
-                    <a href="https://github.com/ashish173/" target="_" class="social-icon">
+                    <a href="https://github.com/ashish173/" target="_blank" class="social-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
                         </svg>
                     </a>
                     <!-- RSS -->
-                    <a href="https://monkeylike.substack.com/" target="_" class="social-icon">
+                    <a href="https://monkeylike.substack.com/" target="_blank" class="social-icon">
                         <<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="6" cy="18" r="2"/>
                             <path d="M4 4a16 16 0 0 1 16 16"/>
@@ -236,9 +265,9 @@
                 company: 'Jio - Tesseract',
                 // logo: '🚀',
                 description: [
-                    'At Jio Tesseract (subsidiary of Reliance Industries), I serve as the Enterprise division Product Head, driving innovation in AR/VR solutions for enterprise applications.',
+                    'At <a href="https://tesseract.in/" target="_blank" class="inline-link">Jio Tesseract</a> (subsidiary of Reliance Industries), I serve as the Enterprise division Product Head, driving innovation in AR/VR solutions for enterprise applications.',
                     'I lead two SaaS platforms: Augmented Remote Collaboration, which streamlines and digitizes maintenance workflows, and VR LMS, designed to enhance learning and development for enterprises, schools, and colleges.',
-                    'I also lead the VR streaming during the IPL, bringing immersive experiences to a broader audience. VR Streaming was consumed by more than 10+ Crore users in the last 2 seasons IPL - 23, 24.',
+                    'I led the <a href="https://www.smartprix.com/bytes/jio-launches-jiodive-vr-headset-for-ipl-2023-all-you-need-to-know-about-price-features-and-how-to-use-it/" target="_blank" class="inline-link">VR streaming project</a> during the IPL 23, bringing immersive sports experiences to the Indian Sports fans for the first time. VR Streaming was consumed by more than <a href="https://www.youtube.com/watch?v=36N1Bz7qW0A" target="_blank" class="inline-link"> 10+ Crore</a> users in the last 2 seasons IPL - 23, 24.',
                 ]
             },
             {
@@ -246,11 +275,12 @@
                 company: 'Aviahire',
                 // logo: '🚀',
                 description: [
-                    'Aviahire is a next-gen autonomous ATS and Rewards & Referral software for enterprises.', 
+                    'Aviahire is a next-gen <a href="https://web.archive.org/web/20221012205040/https://www.aviahire.com/" target="_blank" class="inline-link">Autonomous ATS</a> and Rewards & Referral software for enterprises.', 
                     'It integrates with platforms like Indeed, LinkedIn, and Naukri to automatically pull candidate applications, send customized technical tests, and sort candidates by score.', 
                     'It streamlines recruitment by automating reminders via WhatsApp and SMS, eliminating manual tasks for recruiters.',
                     'The software also simplifies employee referral and rewards tracking, replacing cumbersome spreadsheets with a transparent system that boosts referral rates. ',
-                    'Recruiters can focus on top talent daily, making hiring faster and more efficient.'
+                    'Recruiters can focus on top talent daily, making hiring faster and more efficient.',
+                    'Reached a MRR of $12K serving 20 customers across the globe.'
                 ]
             },
             {
@@ -258,10 +288,11 @@
                 company: 'Aviabird',
                 // logo: '🚀',
                 description: [
-                    'Co-founded the software services division, where I led engineering teams to deliver innovative technology products across Fintech, Adtech, Edutech, and E-commerce verticals.',
-                    'I enabled engineering and product teams to achieve milestones, launch impactful features, and foster a high-performing culture.', 
-                    'I also mentored team members to support their professional growth and drove initiatives like open-sourcing an e-commerce framework and a payments library, which garnered over 2,000 GitHub stars.', 
-                    'This experience reflects my dedication to building robust, scalable solutions and contributing to the broader tech community.'
+                    'Co-founded the software services division, where I led engineering and product teams to deliver innovative technology products across Fintech, Adtech, Edutech, and E-commerce verticals for many prestigious client globally.',
+                    'I also mentored team members to support their professional growth and drove initiatives like <a href="https://github.com/aviabird" class="inline-link" target="_blank">open-sourcing</a> an e-commerce framework <a href="https://github.com/aviacommerce" target="_blank" class="inline-link">Aviacommerce</a> and a payments library <a href="https://github.com/aviabird/gringotts" target="_blank" class="inline-link">Gringotts</a>, which garnered over 2,500 GitHub stars.', 
+                    'This experience reflects my dedication to building robust, scalable solutions and contributing to the broader tech community.',
+                    'Tech stack focused on - Rust, Elixir, Golang, React, Angular, and more...',
+                    'Wrote extensively on my experiences and various community participations on <a href="https://medium.com/@ashishait" class="inline-link" target="_blank">Medium</a>.'
                 ]
             },
             {
@@ -269,7 +300,7 @@
                 company: 'MaxMyWealth',
                 // logo: '🚀',
                 description: [
-                    'Led the development and launch of an intelligent financial app that integrates savings, payments, and investments.',
+                    'Led the development and launch of an <a href="https://www.vccircle.com/fintech-platform-maxmywealth-raises-funds-from-two-uk-firms" taget="_blank" class="inline-link">intelligent financial app</a> that integrates savings, payments, and investments.',
                     'The app offers better returns than banks by linking marketable securities (ETFs, Mutual Funds) to a VISA card and provides smart, gamified investment options using proprietary research.'
                 ]      
             },
@@ -278,7 +309,7 @@
                 company: 'Josh Software',
                 // logo: '🔮',
                 description: [
-                    'Contributed to the launch of Blueshift.com for early customers, focusing on dashboards for marketers and a user tracking service for event tracking and customer identity correlation.',
+                    'Contributed to the launch of <a href="https://blueshift.com" target="_blank" class="inline-link">Blueshift.com</a> for early customers, focusing on dashboards for marketers and a user tracking service for event tracking and customer identity correlation.',
                     'Collaborated with business teams to secure deals and worked extensively on event preparation for the digestion engine. Gained deep insights into handling timezones, recognizing their impact on system stability and planning.',
                     'Technical stack included Angular and Ruby.'
                 ]
@@ -288,7 +319,9 @@
                 company: 'Mally',
                 // logo: '🚗',
                 description: [
-                    'Aggregated offers from nearby shops to give real time alerts to shoppers via a mobile application.',
+                    'Aggregated retail offers from nearby shops to give real time alerts to shoppers via a mobile application.',
+                    'Partnered with the 5 biggest shopping malls in Pune.',
+                    'Won IIT Mumbai E-cell as runner ups in Idea presentation and 3rd place at IMT Nagpur.'
                 ]
             }
         ];
