@@ -1,23 +1,269 @@
-Hi! This is <a href="https://x.com/ashishait" target="_blank">Ashish Singh</a>. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1GMZS2181"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-<br>
+        gtag('config', 'G-H1GMZS2181');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
 
-I am an Engineer by education and training, a product builder and business leader.
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
 
-<br>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-I fundamentally believe technology fills gaps where human constraints can't meet the demands to improve human lives. 
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
 
-<br>
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-At present, I am working at <a href="https://tesseract.in/" target="_blank">Jio Tesseract</a>, the AR/VR division of <a href="https://jio.com/" target="_blank">Jio</a> as a Senior Product Owner.
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
 
-<br>
+        .profile-bio {
+            color: #666;
+            margin-bottom: 1rem;
+        }
 
-I write on <a href="https://monkeylike.substack.com/" target="_blank">Monkey Like</a> about Marketplace, Consumer Trends & Behaviour, Technology, Business and Public Policy Shaping the Future.
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
 
-<address>
-    Email: <a href="mailto:aitashish173@gmail.com">aitashish173@gmail.com</a>
-    <br>
-</address>
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
+        .social-icon:hover {
+            background: #555;
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-year {
+            width: 80px;
+            flex-shrink: 0;
+            color: #666;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+        }
+
+        .company-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .company-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timeline-description {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline-year {
+                width: auto;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="https://via.placeholder.com/128" alt="Profile" class="profile-image">
+            <div class="profile-info">
+                <h1>Ashish Singh</h1>
+                <p class="profile-bio">Building Usefull Products; Student for & of life.</p>
+                <div class="social-links">
+                    <!-- Twitter -->
+                    <a href="https://x.com/ashishait" target="_" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ashish173/" target="_" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C3.79 18.42 3.11 17.95 3.11 17.95c-1.087-.744.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+                        </svg>
+                    </a>
+                    <!-- RSS -->
+                    <a href="https://monkeylike.substack.com/" target="_" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/>
+                            <circle cx="5" cy="19" r="1"/>
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:aitashish173@gmail.com" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline" id="timeline"></div>
+    </div>
+
+    <script>
+        // Timeline data
+        const timelineData = [
+            {
+                year: '2022-Present',
+                company: 'Jio - Tesseract',
+                // logo: '🚀',
+                description: 'At Jio Tesseract (subsidiary of Reliance Industries), I serve as the Enterprise division Product Head, driving innovation in AR/VR solutions for enterprise applications. I lead two SaaS platforms: Augmented Remote Collaboration, which streamlines and digitizes maintenance workflows, and VR LMS, designed to enhance learning and development for enterprises, schools, and colleges. I also lead the VR streaming during the IPL, bringing immersive experiences to a broader audience. VR Streaming was consumed by more than 10 crore users in the last 2 seasons IPL - 23, 24.'
+            },
+            {
+                year: '2019-2022',
+                company: 'Aviahire',
+                // logo: '🚀',
+                description: 'Aviahire is a next-gen autonomous ATS and Rewards & Referral software for enterprises. It integrates with platforms like Indeed, LinkedIn, and Naukri to automatically pull candidate applications, send customized technical tests, and sort candidates by score. It streamlines recruitment by automating reminders via WhatsApp and SMS, eliminating manual tasks for recruiters. The software also simplifies employee referral and rewards tracking, replacing cumbersome spreadsheets with a transparent system that boosts referral rates. Recruiters can focus on top talent daily, making hiring faster and more efficient.'
+            },
+            {
+                year: '2016-2022',
+                company: 'Aviabird',
+                // logo: '🚀',
+                description: 'Co-founded the software services division, where I led engineering teams to deliver innovative technology products across Fintech, Adtech, Edutech, and E-commerce verticals. I enabled engineering and product teams to achieve milestones, launch impactful features, and foster a high-performing culture. During this time, I also mentored team members to support their professional growth and drove initiatives like open-sourcing an e-commerce framework and a payments library, which garnered over 2,000 GitHub stars. This experience reflects my dedication to building robust, scalable solutions and contributing to the broader tech community..'
+            },
+            {
+                year: '2016',
+                company: 'MaxMyWealth',
+                // logo: '🚀',
+                description: 'Led the development and launch of an intelligent financial app that integrates savings, payments, and investments. The app offers better returns than banks by linking marketable securities (ETFs, Mutual Funds) to a VISA card and provides smart, gamified investment options using proprietary research.'
+            },
+            {
+                year: '2014-2015',
+                company: 'Josh Software',
+                // logo: '🔮',
+                description: 'Contributed to the launch of Blueshift.com for early customers, focusing on dashboards for marketers and a user tracking service for event tracking and customer identity correlation. Collaborated with business teams to secure deals and worked extensively on event preparation for the digestion engine. Gained deep insights into handling timezones, recognizing their impact on system stability and planning. Technical stack included Angular and Ruby.'
+            },
+            {
+                year: '2013-2014',
+                company: 'Mally',
+                // logo: '🚗',
+                description: 'Aggregated offers from nearby shops to give real time alerts to shoppers via a mobile application.'
+            }
+        ];
+
+        // Render timeline
+        function renderTimeline() {
+            const timelineContainer = document.getElementById('timeline');
+            
+            timelineData.forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-year">${item.year}</div>
+                    <div class="timeline-content">
+                        <div class="company-info">
+                            <div class="company-name">${item.company}</div>
+                        </div>
+                        <div class="timeline-description">${item.description}</div>
+                    </div>
+                `;
+                
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+        });
+    </script>
+</body>
+</html>
