@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1GMZS2181"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-H1GMZS2181');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-bio {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #555;
+        }
+
+        .social-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-year {
+            width: 120px;
+            flex-shrink: 0;
+            color: #666;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+        }
+
+        .company-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .company-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .timeline-description {
+            color: #666;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-description li {
+            position: relative;
+            margin-bottom: 0.5rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-description li::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .inline-link:hover {
+            color: #1d4ed8;
+        }
+
+        .inline-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .inline-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline-year {
+                width: auto;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-items a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-items a:hover {
+            color: #2563eb;
+        }
+
+        .nav-items a.active {
+            color: #2563eb;
+            font-weight: 500;
+        }
+
+        /* Adjust main container to account for nav bar */
+        .container {
+            margin-top: 4rem;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="nav-items">
+                <a href="../index.html">Home</a>
+                <a href="#" class="active">Work</a>
+                <a href="../books.html">Books</a>
+            </div>
+        </nav>
+        <!-- Header Section -->
+        <div class="header">
+            <img src="../assets/photo.jpg" alt="Profile" class="profile-image">
+            <div class="profile-info">
+                <h1>Ashish Singh</h1>
+                <p class="profile-bio">Building impactful products; forever a student of life. 📚</p>
+                <div class="social-links">
+                    <!-- Twitter -->
+                    <a href="https://x.com/ashishait" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/ashish173/" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
+                        </svg>
+                    </a>
+                    <!-- RSS -->
+                    <a href="https://monkeylike.substack.com/" target="_blank" class="social-icon">
+                        <<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="6" cy="18" r="2"/>
+                            <path d="M4 4a16 16 0 0 1 16 16"/>
+                            <path d="M4 11a9 9 0 0 1 9 9"/>
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:aitashish173@gmail.com" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="M22,5L12,13L2,5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline" id="timeline"></div>
+    </div>
+
+    <script>
+        // Timeline data
+        const timelineData = [
+            {
+                year: '2022-Present',
+                company: 'Jio - Tesseract: Product Head',
+                // logo: '🚀',
+                description: [
+                    'At <a href="https://tesseract.in/" target="_blank" class="inline-link">Jio Tesseract</a>, (subsidiary of Reliance Industries), I serve as the Enterprise division Product Head, driving innovation in AR/VR solutions for enterprise applications.',
+                    'Led the development of India\'s first <a href="https://www.smartprix.com/bytes/jio-launches-jiodive-vr-headset-for-ipl-2023-all-you-need-to-know-about-price-features-and-how-to-use-it/" target="_blank" class="inline-link">VR streaming platform</a> that reached 50M+ users.',
+                    'I lead two SaaS platforms: Augmented Remote Collaboration, which streamlines and digitizes maintenance workflows, and VR LMS, designed to enhance learning and development for enterprises, schools, and colleges in Virtual Reality.',
+                    'Achieved ~5+ minutes average watch time per user in IPL 2023-24.',
+                    'Processed over 5 PB of data per IPL season.'
+                ]
+            },
+            {
+                year: '2019-2022',
+                company: 'Aviahire: Co-founder/Product Head/Sales',
+                // logo: '🚀',
+                description: [
+                    'Led development of Aviahire, an autonomous <a href="https://web.archive.org/web/20221012205040/https://www.aviahire.com/" target="_blank" class="inline-link">Applicant Tracking System (ATS)</a> and employee referral platform that:', 
+                    "Reduced Time-to-Hire by 45% through automated candidate screening and evaluation",
+                    "Improved offer acceptance rate by 30% via streamlined recruitment workflow",
+                    "Achieved $12K MRR with 20+ global enterprise clients",
+                    "Delivered 20% time savings for recruiters by automating manual tasks",
+                    "Integrated with major job platforms (LinkedIn, Indeed, Naukri) for automated application processing",
+                    "Implemented AI-driven candidate sorting and automated technical assessments",
+                    "Developed WhatsApp/SMS automation for candidate communication",
+                    "Built transparent referral tracking system replacing manual spreadsheets",
+                ]
+            },
+            {
+                year: '2016-2022',
+                company: 'Aviabird: Co-founder',
+                // logo: '🚀',
+                description: [
+                    'Co-founded the software services division, where I led engineering and product teams to deliver innovative technology products across Fintech, Adtech, Edutech, and E-commerce verticals for many prestigious client globally.',
+                    'Mentored team members to support their professional growth and drove initiatives like <a href="https://github.com/aviabird" class="inline-link" target="_blank">open-sourcing</a> an e-commerce framework <a href="https://github.com/aviacommerce" target="_blank" class="inline-link">Aviacommerce</a> and a payments library <a href="https://github.com/aviabird/gringotts" target="_blank" class="inline-link">Gringotts</a>, which garnered over 2,500 GitHub stars.', 
+                    'Open Source efforts reflects my dedication to building robust, scalable solutions and contributing to the broader tech community.',
+                    'Cutting edge tech stack  - Rust, Elixir, Golang, React, Angular to name a few',
+                    'Wrote extensively on my experiences and community participations on <a href="https://medium.com/@ashishait" class="inline-link" target="_blank">Medium</a>.'
+                ]
+            },
+            {
+                year: '2016',
+                company: 'MaxMyWealth: Product & Tech Lead',
+                // logo: '🚀',
+                description: [
+                    'Led development of <a href="https://www.vccircle.com/fintech-platform-maxmywealth-raises-funds-from-two-uk-firms" taget="_blank" class="inline-link">intelligent financial platform</a> maximizing investment returns that integrates savings, payments, and investments.',
+                    'Pioneered 2-click Aadhaar KYC solution, fastest in market at launch.',
+                    'Implemented Smart Tax Harvesting strategies for investor tax optimization.',
+                    'Built VISA card integration with marketable securities (ETFs, Mutual Funds).',
+                    'Achieved 99.2% accuracy in Aadhaar/PAN verification using OCR',
+                    'Developed gamified investment platform with proprietary research algorithms.',
+                    'Created seamless payment-investment integration for higher returns vs traditional banking.'
+                ]      
+            },
+            {
+                year: '2014-2015',
+                company: 'Josh Software: Engineer',
+                // logo: '🔮',
+                description: [
+                    'Core Engineer at <a href="https://blueshift.com" target="_blank" class="inline-link">Blueshift.com</a> (Early Stage): for the first 15 customers.',
+                    'Led development of analytics dashboards and user tracking systems for first 15 enterprise customers',
+                    'Built event tracking and customer identity services.',
+                    'Implemented robust timezone handling for system stability.',
+                    'Worked closely with business teams to align technical solutions with customer needs.'
+                ]
+            },
+            {
+                year: '2013-2014',
+                company: 'Mally: Co-founder/Product',
+                // logo: '🚗',
+                description: [
+                    'Aggregated retail offers from nearby shops to give real time alerts to shoppers via a mobile application.',
+                    'Partnered with the 5 biggest shopping malls in Pune.',
+                    'Won IIT Mumbai E-cell as runner ups and 3rd place at IMT Nagpur in Startup Idea Presentation competition.'
+                ]
+            }
+        ];
+
+
+        // Render timeline
+        function renderTimeline() {
+            const timelineContainer = document.getElementById('timeline');
+            
+            timelineData.forEach(item => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                
+                const descriptionList = item.description
+                    .map(point => `<li>${point}</li>`)
+                    .join('');
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-year">${item.year}</div>
+                    <div class="timeline-content">
+                        <div class="company-info">
+                            <div class="company-name">${item.company}</div>
+                        </div>
+                        <div class="timeline-description">
+                            <ul style="counter-reset: item;">
+                                ${descriptionList}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTimeline();
+        });
+    </script>
+</body>
+</html>
