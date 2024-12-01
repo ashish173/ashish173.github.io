@@ -104,70 +104,108 @@
             display: flex;
             align-items: center;
             flex-grow: 1;
+            min-width: 0;
         }
 
         .book-number {
+            flex-shrink: 0; /* Prevent number from shrinking */
             color: #6b7280;
             font-size: 0.875rem;
             margin-right: 0.5rem;
+            min-width: 1.5rem; /* Ensure consistent width for numbers */
         }
 
-        .book-icon {
-            color: #2563eb;
+        .book-title-container {
+            flex: 1;
+            min-width: 0; /* Enable truncation in flex container */
             margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
         }
 
         .book-title {
             font-weight: 500;
-            margin-right: 0.5rem;
+            margin-right: 0.5rem; /* Space between title and link */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Show ellipsis for overflow */
+            white-space: nowrap; /* Prevent title from wrapping */
+            min-width: 0; /* Enable truncation */
         }
 
         .rating {
+            background-color: #e0f7fa;
+            border-radius: 12px;
+            padding: 0.25rem 0.5rem;
+            margin-left: 0.5rem; /* Space between rating and link */
+            flex-shrink: 0; /* Prevent rating from shrinking */
+        }
+
+        .external-link {
             display: inline-flex;
             align-items: center;
-            background-color: #e0f7fa; /* Light blue background */
-            border-radius: 12px; /* Pill shape */
-            padding: 0.25rem 0.5rem; /* Padding for the pill */
-            margin-left: 0.5rem;
-            font-size: 0.875rem;
-            color: #00796b; /* Darker text color */
+            color: #2563eb;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+            width: 24px; /* Fixed width for the icon */
+            height: 24px; /* Fixed height for the icon */
+            margin-left: auto; /* Push to the right */
+            flex-shrink: 0; /* Prevent the icon from shrinking */
+        }
+
+        .book-icon {
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            margin-right: 0.5rem;
+            width: 24px; /* Fixed width for the book icon */
+            height: 24px; /* Fixed height for the book icon */
+        }
+
+        .external-link:hover {
+            transform: translateY(-1px) scale(1.05);
         }
 
         .book-author {
             color: #6b7280;
             font-size: 0.875rem;
-            margin-right: 0.5rem;
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Show ellipsis */
+            max-width: 200px; /* Limit width to force truncation */
+            flex-shrink: 0; /* Prevent shrinking */
+            display: none;
         }
 
-        .external-link {
-            display: flex;
-            align-items: center;
-            color: #2563eb;
-            text-decoration: none;
-            transition: transform 0.2s ease;
+        /* Media query to hide rating and author on mobile devices */
+        @media (max-width: 480px) {
+            .rating,
+            .book-author {
+                display: none;
+            }
         }
 
-        .external-link:hover {
-            transform: translateY(-1px) scale(1.05);
+        /* Media query to show author name on larger screens */
+        @media (min-width: 780px) {
+            .book-author {
+                display: inline; /* Show author name */
+            }
         }
     </style>
 </head>
 <body>
     <nav class="nav-bar">
         <div class="nav-items">
-            <a href="./index.html" style="font-size: 1.5rem;">Ashish Singh</a>
+            <a href="./index.html">Ashish Singh</a>
             <a href="./work.html">Work</a>
             <a href="#" class="active">Books</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Books I've Read</h1>
+        <h1>Books I've Read & Recommend</h1>
         <div id="books-container">
             <!-- Books will be dynamically inserted here -->
         </div>
     </div>
-    
+
     <script>
         // Books data structure with ratings
         const booksData = {
@@ -264,14 +302,16 @@
                                 <div class="book-left">
                                     <span class="book-number">${index + 1}.</span>
                                     ${bookIconSvg}
-                                    <span class="book-title">${book.title}</span>
-                                    <span class="rating">${book.rating} ⭐</span>
+                                    <div class="book-title-container">
+                                        <a href="${book.amazonLink}" class="book-title" target="_blank" rel="noopener noreferrer">${book.title}</a>
+                                    </div>
                                     <a href="${book.amazonLink}" 
                                        class="external-link" 
                                        target="_blank" 
                                        rel="noopener noreferrer">
                                         ${externalLinkSvg}
                                     </a>
+                                    <span class="rating">${book.rating} ⭐</span>
                                 </div>
                                 <span class="book-author">${book.author}</span>
                             </li>
