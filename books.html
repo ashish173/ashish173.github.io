@@ -74,51 +74,6 @@
             text-align: center;
         }
 
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .book-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .book-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .book-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .book-author {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .book-link {
-            display: inline-block;
-            color: #2563eb;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .book-link:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
-        }
-
         .year-section {
             margin-bottom: 2rem;
             max-width: 800px;
@@ -138,31 +93,50 @@
         }
 
         .book-item {
-            display: grid;
-            grid-template-columns: 2rem 2rem auto minmax(150px, auto) 2rem;
-            gap: 1rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             padding: 0.75rem 0;
             border-bottom: 1px solid #f3f4f6;
         }
 
+        .book-left {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
         .book-number {
             color: #6b7280;
             font-size: 0.875rem;
-            text-align: right;
+            margin-right: 0.5rem;
         }
 
         .book-icon {
             color: #2563eb;
+            margin-right: 0.5rem;
         }
 
         .book-title {
             font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background-color: #e0f7fa; /* Light blue background */
+            border-radius: 12px; /* Pill shape */
+            padding: 0.25rem 0.5rem; /* Padding for the pill */
+            margin-left: 0.5rem;
+            font-size: 0.875rem;
+            color: #00796b; /* Darker text color */
         }
 
         .book-author {
             color: #6b7280;
             font-size: 0.875rem;
+            margin-right: 0.5rem;
         }
 
         .external-link {
@@ -171,16 +145,19 @@
             color: #2563eb;
             text-decoration: none;
             transition: transform 0.2s ease;
-            justify-self: end;
+        }
+
+        .external-link:hover {
+            transform: translateY(-1px) scale(1.05);
         }
     </style>
 </head>
 <body>
     <nav class="nav-bar">
         <div class="nav-items">
-            <a href="/">Home</a>
-            <a href="/work">Work</a>
-            <a href="/books" class="active">Books</a>
+            <a href="./index.html">Home</a>
+            <a href="./work.html">Work</a>
+            <a href="#" class="active">Books</a>
         </div>
     </nav>
 
@@ -192,25 +169,48 @@
     </div>
 
     <script>
-        // Books data structure
+        // Books data structure with ratings
         const booksData = {
             "2024": [
                 {
-                    title: "The Psychology of Money",
-                    author: "Morgan Housel",
-                    amazonLink: "https://www.amazon.com/Psychology-Money-Timeless-Lessons-Happiness/dp/0857197681"
+                    title: "The Age of AI",
+                    author: "Eric Schmidt, Henry Kissinger",
+                    amazonLink: "https://www.amazon.in/Age-AI-Our-Human-Future-ebook/dp/B09985PX3K/",
+                    rating: 4.5
                 },
                 {
-                    title: "Atomic Habits",
-                    author: "James Clear",
-                    amazonLink: "https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299"
+                    title: "A Technique for Producing Ideas",
+                    author: "James Webb Young",
+                    amazonLink: "https://www.amazon.in/Technique-Producing-Advertising-Classics-Library/dp/0071410945",
+                    rating: 4.2
+                },
+                {
+                    title: "The Goal",
+                    author: "Eliyahu M. Goldratt",
+                    amazonLink: "https://www.amazon.in/Goal-Process-Improvement-Paperback-Goldratt/dp/B0DC69G837",
+                    rating: 4
+                },
+                {
+                    title: "The Choice",
+                    author: "Eliyahu M. Goldratt",
+                    amazonLink: "https://www.amazon.in/Choice-Eliyahu-M-Goldratt/dp/1032552581/",
+                    rating: 5
                 }
             ],
             "2023": [
                 {
-                    title: "Deep Work",
-                    author: "Cal Newport",
-                    amazonLink: "https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692"
+                    title: "Business Maharajas",
+                    author: "Gita Piramal",
+                    amazonLink: "https://www.amazon.in/Business-Maharajas-Piramal-Gita/dp/0143415832",
+                    rating: 4
+                }
+            ],
+            "2007": [
+                {
+                    title: "Dhirubhaism",
+                    author: "A.G Krishnamurthy",
+                    amazonLink: "https://www.amazon.in/DHIRUBHAISM-G-Krishnamurthy/dp/0070633738",
+                    rating: 5
                 }
             ]
         };
@@ -243,16 +243,19 @@
                     <ul class="books-list">
                         ${booksData[year].map((book, index) => `
                             <li class="book-item">
-                                <span class="book-number">${index + 1}.</span>
-                                ${bookIconSvg}
-                                <span class="book-title">${book.title}</span>
-                                <span class="book-author">by ${book.author}</span>
-                                <a href="${book.amazonLink}" 
-                                   class="external-link" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer">
-                                    ${externalLinkSvg}
-                                </a>
+                                <div class="book-left">
+                                    <span class="book-number">${index + 1}.</span>
+                                    ${bookIconSvg}
+                                    <span class="book-title">${book.title}</span>
+                                    <span class="rating">${book.rating} ⭐</span>
+                                    <a href="${book.amazonLink}" 
+                                       class="external-link" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer">
+                                        ${externalLinkSvg}
+                                    </a>
+                                </div>
+                                <span class="book-author">${book.author}</span>
                             </li>
                         `).join('')}
                     </ul>
